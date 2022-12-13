@@ -1,4 +1,7 @@
-package com.simpleprogrammer;
+package com.simpleprogrammer.service;
+
+import com.simpleprogrammer.HistoryItem;
+import com.simpleprogrammer.exception.InvalidGoalException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,7 +9,7 @@ import java.util.List;
 public class TrakingService {
     private int total;
     private int goal;
-    private List<HistoryItem> history = new ArrayList<HistoryItem>();
+    private List<HistoryItem> history = new ArrayList<>();
     private int hitoryId = 0;
 
     public void addProtein(int amount){
@@ -26,7 +29,10 @@ public class TrakingService {
         return total;
     }
 
-    public void setGoal(int value){
+    public void setGoal(int value) throws InvalidGoalException {
+        if(value <= 0)
+            throw new InvalidGoalException();
+
         goal = value;
     }
 

@@ -1,26 +1,18 @@
 package test;
 
 import org.junit.*;
+import org.junit.experimental.categories.Category;
+import test.category.GoodTestCategory;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 /**Class whit the main anotations */
+@Category(GoodTestCategory.class)
 public class HelloJUnit {
 
-    @Before
-    //Behavior before each test
-    @After
-
-    @BeforeClass
-    //Behavior before all tests of a class
-    @AfterClass
-
-    @Ignore
-    //Ignores a test
-
-    //Maximum execution time and exception handler
-    @Test(timeout = 100, expected = Exception.class)
+    @Test()
     public void helloJUnit(){
+
         System.out.println("Hi");
     }
 
