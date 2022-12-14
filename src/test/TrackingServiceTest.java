@@ -1,23 +1,25 @@
 package test;
 
 import com.simpleprogrammer.exception.InvalidGoalException;
-import com.simpleprogrammer.service.TrakingService;
+import com.simpleprogrammer.service.TrackingService;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
+import org.junit.jupiter.api.Assertions;
 import test.category.GoodTestCategory;
 
+import static org.hamcrest.CoreMatchers.*;
+import static org.junit.Assert.*;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class TrakingServiceTest {
+public class TrackingServiceTest {
 
-    private TrakingService service;
+    private TrackingService service;
 
     //Will restart every time the service
     @Before
     public void setUpService(){
-        service = new TrakingService();
+        service = new TrackingService();
     }
 
     //If i am working on a test and don't want to test, i can ignore
@@ -34,6 +36,11 @@ public class TrakingServiceTest {
     public void whenAddingProteinTotalIncreasesByAmount(){
         service.addProtein(10);
         assertEquals(10, service.getTotal());
+        //Just another sintaxe
+        assertThat(service.getTotal(), is(10));
+        //More complex, testing more than one topic
+        assertThat(service.getTotal(), allOf(is(10), instanceOf(Integer.class)));
+
     }
 
     @Test

@@ -1,9 +1,10 @@
-package test;
+package test.suite;
 
-import com.simpleprogrammer.service.TrakingService;
 import org.junit.experimental.categories.Categories;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
+import test.HelloJUnit;
+import test.TrackingServiceTest;
 import test.category.GoodTestCategory;
 
 /**Run multiples tests, in multiples classes */
@@ -13,7 +14,7 @@ import test.category.GoodTestCategory;
 //Setting with classes will be tested in this suite
 @Suite.SuiteClasses({
         HelloJUnit.class,
-        TrakingServiceTest.class
+        TrackingServiceTest.class
 })
 public class GoodTestsSuite {
 }

@@ -6,7 +6,7 @@ import com.simpleprogrammer.exception.InvalidGoalException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TrakingService {
+public class TrackingService {
     private int total;
     private int goal;
     private List<HistoryItem> history = new ArrayList<>();
