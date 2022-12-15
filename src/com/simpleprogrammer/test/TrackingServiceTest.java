@@ -1,12 +1,11 @@
-package test;
+package com.simpleprogrammer.test;
 
-import com.simpleprogrammer.exception.InvalidGoalException;
-import com.simpleprogrammer.service.TrackingService;
+import com.simpleprogrammer.main.exception.InvalidGoalException;
+import com.simpleprogrammer.main.service.TrackingService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
-import org.junit.jupiter.api.Assertions;
-import test.category.GoodTestCategory;
+import com.simpleprogrammer.test.category.GoodTestCategory;
 
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.*;

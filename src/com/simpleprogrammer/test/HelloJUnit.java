@@ -1,10 +1,8 @@
-package test;
+package com.simpleprogrammer.test;
 
 import org.junit.*;
 import org.junit.experimental.categories.Category;
-import test.category.GoodTestCategory;
-
-import static org.junit.jupiter.api.Assertions.*;
+import com.simpleprogrammer.test.category.GoodTestCategory;
 
 /**Class whit the main anotations */
 @Category(GoodTestCategory.class)

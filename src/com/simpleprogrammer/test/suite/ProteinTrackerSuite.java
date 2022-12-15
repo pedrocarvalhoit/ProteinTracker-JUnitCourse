@@ -1,9 +1,9 @@
-package test.suite;
+package com.simpleprogrammer.test.suite;
 
+import com.simpleprogrammer.test.HelloJUnit;
+import com.simpleprogrammer.test.TrackingServiceTest;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
-import test.HelloJUnit;
-import test.TrackingServiceTest;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({

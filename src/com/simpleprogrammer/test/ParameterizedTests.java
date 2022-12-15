@@ -1,6 +1,6 @@
-package test;
+package com.simpleprogrammer.test;
 
-import com.simpleprogrammer.service.TrackingService;
+import com.simpleprogrammer.main.service.TrackingService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;

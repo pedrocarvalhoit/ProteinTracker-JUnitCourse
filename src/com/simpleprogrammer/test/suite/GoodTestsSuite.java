@@ -1,11 +1,11 @@
-package test.suite;
+package com.simpleprogrammer.test.suite;
 
 import org.junit.experimental.categories.Categories;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
-import test.HelloJUnit;
-import test.TrackingServiceTest;
-import test.category.GoodTestCategory;
+import com.simpleprogrammer.test.HelloJUnit;
+import com.simpleprogrammer.test.TrackingServiceTest;
+import com.simpleprogrammer.test.category.GoodTestCategory;
 
 /**Run multiples tests, in multiples classes */
 @RunWith(Categories.class)

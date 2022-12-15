@@ -1,7 +1,7 @@
-package com.simpleprogrammer.service;
+package com.simpleprogrammer.main.service;
 
-import com.simpleprogrammer.HistoryItem;
-import com.simpleprogrammer.exception.InvalidGoalException;
+import com.simpleprogrammer.main.HistoryItem;
+import com.simpleprogrammer.main.exception.InvalidGoalException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,7 +31,7 @@ public class TrackingService {
 
     public void setGoal(int value) throws InvalidGoalException {
         if(value <= 0)
-            throw new InvalidGoalException();
+            throw new InvalidGoalException("Goal was less than zero");
 
         goal = value;
     }
