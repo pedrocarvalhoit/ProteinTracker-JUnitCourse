@@ -1,5 +1,6 @@
 package com.simpleprogrammer.test.theories;
 
+import com.simpleprogrammer.main.NotifierStub;
 import com.simpleprogrammer.main.service.TrackingService;
 import org.junit.Assume;
 import org.junit.experimental.theories.DataPoint;
@@ -21,7 +22,7 @@ public class TrackingServiceTheories {
 
     @Theory
     public void positiveValuesShouldAlwaysHavePositiveTotal(int value){
-        TrackingService service = new TrackingService();
+        TrackingService service = new TrackingService(new NotifierStub());
         service.addProtein(value);
         Assume.assumeTrue(value > 0);
 

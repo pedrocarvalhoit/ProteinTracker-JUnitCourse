@@ -1,5 +1,6 @@
 package com.simpleprogrammer.test;
 
+import com.simpleprogrammer.main.NotifierStub;
 import com.simpleprogrammer.main.service.TrackingService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -15,7 +16,7 @@ public class ParameterizedTests {
 
     private int input;
     private int expectedResult;
-    private static TrackingService service = new TrackingService();
+    private static TrackingService service = new TrackingService(new NotifierStub());
 
     public ParameterizedTests(int input, int expectedResult){
         this.input = input;

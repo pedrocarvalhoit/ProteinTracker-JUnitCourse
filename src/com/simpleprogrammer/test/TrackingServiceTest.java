@@ -1,11 +1,14 @@
 package com.simpleprogrammer.test;
 
+import com.simpleprogrammer.main.HistoryItem;
+import com.simpleprogrammer.main.NotifierStub;
 import com.simpleprogrammer.main.exception.InvalidGoalException;
 import com.simpleprogrammer.main.service.TrackingService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 import com.simpleprogrammer.test.category.GoodTestCategory;
+import org.junit.jupiter.api.Assertions;
 
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.*;
@@ -18,7 +21,7 @@ public class TrackingServiceTest {
     //Will restart every time the service
     @Before
     public void setUpService(){
-        service = new TrackingService();
+        service = new TrackingService(new NotifierStub());
     }
 
     //If i am working on a test and don't want to test, i can ignore
@@ -55,10 +58,19 @@ public class TrackingServiceTest {
     }
 
     //In case of multiple tests can set a time target to each one
-    @Test(timeout = 200)
+    @Test//(timeout = 20000)
     public void badTest(){
-        for(int i = 0; i < 1000000000; i++){
+        for(int i = 0; i < 100; i++){
             service.addProtein(i);
         }
+    }
+
+    @Test
+    public void whenGoalIsMetHistoryIsUpdated() throws InvalidGoalException {
+        service.setGoal(5);
+        service.addProtein(6);
+
+        HistoryItem result = service.getHistory().get(1);
+        assertEquals("sent:goal met", result.getOperation());
     }
 }

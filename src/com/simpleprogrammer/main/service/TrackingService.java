@@ -1,6 +1,7 @@
 package com.simpleprogrammer.main.service;
 
 import com.simpleprogrammer.main.HistoryItem;
+import com.simpleprogrammer.main.Notifier;
 import com.simpleprogrammer.main.exception.InvalidGoalException;
 
 import java.util.ArrayList;
@@ -11,10 +12,25 @@ public class TrackingService {
     private int goal;
     private List<HistoryItem> history = new ArrayList<>();
     private int hitoryId = 0;
+    private Notifier notifier;
+
+    public TrackingService(Notifier notifier){
+        this.notifier = notifier;
+    }
 
     public void addProtein(int amount){
         total += amount;
         history.add(new HistoryItem(hitoryId++, amount, "add", total));
+
+        //Using an outside dependency (notifierStub)
+        if(total > goal){
+            boolean sendResult = notifier.send("goal met");
+            String historyMesage = "sent: goal met";
+            if(!sendResult){
+                historyMesage = "send_error:goal met";
+            history.add(new HistoryItem(hitoryId++, 0, historyMesage, total));
+            }
+        }
     }
 
     public void removeProtein(int amount){
