@@ -1,7 +1,7 @@
 package com.simpleprogrammer.main.service;
 
 import com.simpleprogrammer.main.HistoryItem;
-import com.simpleprogrammer.main.Notifier;
+import com.simpleprogrammer.main.notifier.Notifier;
 import com.simpleprogrammer.main.exception.InvalidGoalException;
 
 import java.util.ArrayList;

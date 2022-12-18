@@ -1,14 +1,14 @@
 package com.simpleprogrammer.test;
 
 import com.simpleprogrammer.main.HistoryItem;
-import com.simpleprogrammer.main.NotifierStub;
+import com.simpleprogrammer.main.notifier.NotifierStub;
 import com.simpleprogrammer.main.exception.InvalidGoalException;
 import com.simpleprogrammer.main.service.TrackingService;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 import com.simpleprogrammer.test.category.GoodTestCategory;
-import org.junit.jupiter.api.Assertions;
 
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.*;
@@ -70,7 +70,7 @@ public class TrackingServiceTest {
         service.setGoal(5);
         service.addProtein(6);
 
-        HistoryItem result = service.getHistory().get(1);
-        assertEquals("sent:goal met", result.getOperation());
+        HistoryItem result = service.getHistory().get(0);
+        Assert.assertEquals("sent:goal met", result.getOperation());
     }
 }

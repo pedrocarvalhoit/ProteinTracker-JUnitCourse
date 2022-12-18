@@ -1,6 +1,6 @@
 package com.simpleprogrammer.test;
 
-import com.simpleprogrammer.main.NotifierStub;
+import com.simpleprogrammer.main.notifier.NotifierStub;
 import com.simpleprogrammer.main.service.TrackingService;
 import org.junit.Test;
 import org.junit.runner.RunWith;

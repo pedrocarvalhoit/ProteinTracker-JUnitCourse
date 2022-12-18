@@ -1,9 +1,8 @@
 package com.simpleprogrammer.test.theories;
 
-import com.simpleprogrammer.main.NotifierStub;
+import com.simpleprogrammer.main.notifier.NotifierStub;
 import com.simpleprogrammer.main.service.TrackingService;
 import org.junit.Assume;
-import org.junit.experimental.theories.DataPoint;
 import org.junit.experimental.theories.DataPoints;
 import org.junit.experimental.theories.Theories;
 import org.junit.experimental.theories.Theory;
